@@ -1,5 +1,5 @@
 export default {
-  ssr: true,
+  ssr: false,
   head: {
     title: 'Fast Health Help',
     htmlAttrs: {
@@ -34,7 +34,8 @@ export default {
     '@nuxtjs/axios',
   ],
   router: {
-    base: '/',
+    // base: '/',
+    base: '/fasthealthhelp/',
     mode: 'history',
     extendRoutes(routes, resolve) {
       routes.push({
@@ -45,10 +46,12 @@ export default {
     },
   },
   generate: {
-    dir: './dist_server'
+    // dir: './dist_server'
+    dir: './dist'
   },
   build: {
-    target: 'server'
+    // target: 'server'
+    target: 'static'
   },
   server: {
     port: 8010,
